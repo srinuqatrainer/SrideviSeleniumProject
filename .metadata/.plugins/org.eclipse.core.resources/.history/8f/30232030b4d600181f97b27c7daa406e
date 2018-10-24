@@ -1,0 +1,72 @@
+package com.GRID;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class NewTours_LogInTest 
+{
+
+	//DesiredCapabilities -- this is used to assign which browser and platform should be considered for the test
+	//RemoteWebDriver -- is used to connect to HUB and Execute the test on the nodes
+	@Parameters("Browser")
+	@Test
+	public void logIn(String b) throws MalformedURLException
+	{
+		// Connection to nodes -- for the distributed testing
+		System.out.println(" The Browser is : "+b);
+		
+		DesiredCapabilities cap=null;
+		
+		if(b.equals("firefox"))
+		{
+			cap= DesiredCapabilities.firefox();
+			cap.setBrowserName("firefox");
+			cap.setPlatform(Platform.WINDOWS);
+		}
+		else
+			if(b.equals("chrome"))
+			{
+				cap = DesiredCapabilities.chrome();
+				cap.setBrowserName("chrome");
+				cap.setPlatform(Platform.WINDOWS);
+			}
+		
+		
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://192.168.1.2:4444/wd/hub"),cap);
+		
+		driver.get("http://newtours.demoaut.com");
+		
+		driver.get("http://facebook.com");
+		
+		// <input id="email" class="inputtext" type="email" data-testid="royal_email" tabindex="1" name="email">
+				
+				// locator - id
+				// Selection - email
+				
+				driver.findElement(By.id("email")).sendKeys("sridevi");
+				
+		//  <input id="pass" class="inputtext" type="password" data-testid="royal_pass" tabindex="2" name="pass">
+				
+				driver.findElement(By.id("pass")).sendKeys("Hello");
+				
+		// <label id="loginbutton" class="uiButton uiButtonConfirm" for="u_0_2">
+				
+				driver.findElementById("loginbutton").click();
+				
+				System.out.println(" Navigate to LogIn Page");
+				
+				driver.close();
+		
+	}
+	
+	
+	
+}

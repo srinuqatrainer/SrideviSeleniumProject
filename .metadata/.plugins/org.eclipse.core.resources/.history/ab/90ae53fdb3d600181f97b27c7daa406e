@@ -1,0 +1,82 @@
+package com.GRID;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+public class NewTours_LogInTest 
+{
+
+	//DesiredCapabilities -- this is used to assign which browser and platform should be considered for the test
+	//RemoteWebDriver -- is used to connect to HUB and Execute the test on the nodes
+	@Parameters("Browser")
+	@Test
+	public void logIn(String b) throws MalformedURLException
+	{
+		// Connection to nodes -- for the distributed testing
+		System.out.println(" The Browser is : "+b);
+		
+		DesiredCapabilities cap=null;
+		
+		if(b.equals("firefox"))
+		{
+			cap= DesiredCapabilities.firefox();
+			cap.setBrowserName("firefox");
+			cap.setPlatform(Platform.WINDOWS);
+		}
+		else
+			if(b.equals("chrome"))
+			{
+				cap = DesiredCapabilities.chrome();
+				cap.setBrowserName("chrome");
+				cap.setPlatform(Platform.WINDOWS);
+			}
+		
+		
+		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://192.168.1.2:4444/wd/hub"),cap);
+		
+		driver.get("http://newtours.demoaut.com");
+		
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		driver.findElement(By.name("userName")).sendKeys("tutorial");
+		
+		// <input type="password" size="10" name="password">
+		
+		driver.findElementByName("password").sendKeys("tutorial");
+		
+// <input width="58" type="image" border="0" height="17" alt="Sign-In" 
+//		src="/images/btn_signin.gif?osCsid=7fb031042a32d2b51901b09bbaf5e217" value="Login" name="login">
+		
+		driver.findElementByName("login").click();
+		
+		String expected_Title="Find";
+		System.out.println("Title of NewTours After LogIn Successful is :"+ expected_Title);
+		
+		String actual_Title=driver.getTitle();
+		System.out.println("Title of the WebPage is: "+ actual_Title);
+						
+		if(actual_Title.contains(expected_Title))
+		{
+			System.out.println("LogIN Successfull -- PASS");
+		}
+		else
+		{
+			System.out.println("LogIN Failed -- FAIL");
+		}
+		
+		driver.quit();
+		
+	}
+	
+	
+	
+}

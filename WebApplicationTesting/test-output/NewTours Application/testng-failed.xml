@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [NewTours Application]" parallel="tests">
+  <test name="POM(failed)" parallel="tests">
+    <classes>
+      <class name="com.DataDriven.NewTours_LogInTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.DataDriven.NewTours_LogInTest -->
+      <class name="com.DataDriven.NewTour_NewUserRegistrations_TestData">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.DataDriven.NewTour_NewUserRegistrations_TestData -->
+      <class name="com.POM.NewToursHomePageTesting">
+        <methods>
+          <include name="homePage"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.POM.NewToursHomePageTesting -->
+    </classes>
+  </test> <!-- POM(failed) -->
+</suite> <!-- Failed suite [NewTours Application] -->

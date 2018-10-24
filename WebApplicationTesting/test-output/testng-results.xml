@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Grid Testing" duration-ms="35490" started-at="2018-10-23T11:11:22Z" finished-at="2018-10-23T11:11:57Z">
+    <groups>
+    </groups>
+    <test name="on chrome" duration-ms="18015" started-at="2018-10-23T11:11:22Z" finished-at="2018-10-23T11:11:40Z">
+      <class name="com.GRID.NewTours_LogInTest">
+        <test-method status="PASS" signature="logIn(java.lang.String)[pri:0, instance:com.GRID.NewTours_LogInTest@735b5592]" name="logIn" duration-ms="17983" started-at="2018-10-23T16:41:22Z" finished-at="2018-10-23T16:41:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logIn -->
+      </class> <!-- com.GRID.NewTours_LogInTest -->
+    </test> <!-- on chrome -->
+    <test name="on firefox" duration-ms="35490" started-at="2018-10-23T11:11:22Z" finished-at="2018-10-23T11:11:57Z">
+      <class name="com.GRID.NewTours_LogInTest">
+        <test-method status="PASS" signature="logIn(java.lang.String)[pri:0, instance:com.GRID.NewTours_LogInTest@402f32ff]" name="logIn" duration-ms="35464" started-at="2018-10-23T16:41:22Z" finished-at="2018-10-23T16:41:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logIn -->
+      </class> <!-- com.GRID.NewTours_LogInTest -->
+    </test> <!-- on firefox -->
+  </suite> <!-- Grid Testing -->
+</testng-results>

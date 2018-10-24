@@ -1,0 +1,12 @@
+package com.GRID;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class NewTours_LogInTest 
+{
+
+	DesiredCapabilities
+	
+	
+	
+}

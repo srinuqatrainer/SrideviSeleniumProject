@@ -1,0 +1,7 @@
+<suite name="NewTours Application">
+ <test name="POM">
+   <classes>
+     <class name="com.POM.NewToursHomePageTesting"/>
+   </classes>
+  </test>
+</suite>

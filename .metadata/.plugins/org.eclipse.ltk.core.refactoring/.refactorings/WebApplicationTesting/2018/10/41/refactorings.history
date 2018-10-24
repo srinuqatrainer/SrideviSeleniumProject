@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;WebApplicationTesting/driverFiles/MicrosoftWebDriver (2).exe&apos; to &apos;MicrosoftWebDriver.exe&apos;" description="Rename resource &apos;MicrosoftWebDriver (2).exe&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="driverFiles/MicrosoftWebDriver (2).exe" name="MicrosoftWebDriver.exe" stamp="1538998034213" updateReferences="true"/>
+</session>
